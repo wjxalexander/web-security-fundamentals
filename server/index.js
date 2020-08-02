@@ -71,7 +71,9 @@ app.use(session({
 }));
 
 ///////////////////////////////////////////
-//// ↓ EXERCISE 7 SOLUTION GOES HERE ↓ ////
+app.use(function (req, resp) {
+    resp.setHeader("'X-Frame-Options'", "'SAMEOROGIN'")
+})
 ///////////////////////////////////////////
 
 app.use(flashMiddleware);
